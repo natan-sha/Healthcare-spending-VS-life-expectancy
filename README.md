@@ -7,6 +7,7 @@ A data visualisation project exploring the relationship between government healt
 Two interactive visualisations built with Python and Plotly:
 
 *Chart 1*: Healthcare spending vs life expectancy across 191 countries (scatter plot)
+
 *Chart 2*: Life expectancy change in the EU (2015→2019) grouped by whether countries increased or cut healthcare spending between 2010 and 2015 (connected dot plot)
 
 *Approach for chart 1*:
