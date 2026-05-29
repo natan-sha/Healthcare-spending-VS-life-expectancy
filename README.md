@@ -20,11 +20,11 @@ Two interactive visualisations built with Python and Plotly:
 # Key findings
 For the latest data available in 2023, the scatter plot reveals a logarithmic relationship: additional healthcare spending has a large impact at lower levels but shows diminishing returns at higher levels. Within each income group, certain countries significantly underperform relative to their spending — these are highlighted as larger markers on the plot.
 
-![Healthcare chart for 2023](/Users/nataliam/Desktop/All/python_projects/aboba/outputs/healthcare_chart_2023.png)
+![Healthcare chart for 2023](/outputs/healthcare_chart_2023.png)
 
 For the relation between spendings in 2010-2014 and 5 years later, across the EU: EU countries that increased healthcare spending gained on average 0.84 years of life expectancy between 2015 and 2019 — nearly twice the gain of countries that cut spending. Croatia is noted as an outlier, having joined the EU in 2013.
 
-![What changed within 5 years](/Users/nataliam/Desktop/All/python_projects/aboba/outputs/in_five_years.png)
+![What changed within 5 years](/outputs/in_five_years.png)
 
 # Tools & libraries
 
