@@ -1,7 +1,10 @@
 [project]
 name = "aboba"
 version = "0.1.0"
-description = "Add your description here"
+description = "Data visualisation project exploring healthcare spending and life expectancy using World Bank open data"
+authors = [
+    {name = "Natansha"}
+]
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [

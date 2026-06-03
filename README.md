@@ -1,14 +1,14 @@
 # EU Healthcare Spending & Life Expectancy
 
-A data visualisation project exploring the relationship between government healthcare spending and life expectancy, using open data from the World Bank.
+A data visualisation project exploring the relationship between government healthcare spending and life expectancy, using open data from the World Bank. It has two lenses: a global view across 191 countries, and a focused look at the EU to examine how spending changes in one period affected life expectancy five years later.
 
-# What it does
+## What it does
 
 Two interactive visualisations built with Python and Plotly:
 
 *Chart 1*: Healthcare spending vs life expectancy across 191 countries (scatter plot)
 
-*Chart 2*: Life expectancy change in the EU (2015→2019) grouped by whether countries increased or cut healthcare spending between 2010 and 2015 (connected dot plot)
+*Chart 2*: Life expectancy change in the EU (2015 → 2019) grouped by whether countries increased or cut healthcare spending between 2010 and 2015 (connected dot plot)
 
 *Approach for chart 1*:
 1. Fetch spending and life expectancy data via API for 2010–2024
@@ -17,21 +17,39 @@ Two interactive visualisations built with Python and Plotly:
 4. Select the latest year with data available for each country (2023 for 191 out of 193 countries)
 5. Identify outlier countries per income group using regression residuals — countries whose life expectancy falls furthest below what their spending level would predict
 
-# Key findings
+*Approach for chart 2*:
+1. Fetch spending data for 2010–2015 and life expectancy data for 2015 and 2019 via API
+2. Filter to EU-27 countries, excluding Croatia (joined EU in 2013, noted as an outlier)
+3. Classify each country as having increased or cut healthcare spending between 2010 and 2015
+4. Calculate the life expectancy change between 2015 and 2019 for each country
+5. Group and compare average gains between the two categories
+
+## Key findings
+
 For the latest data available in 2023, the scatter plot reveals a logarithmic relationship: additional healthcare spending has a large impact at lower levels but shows diminishing returns at higher levels. Within each income group, certain countries significantly underperform relative to their spending — these are highlighted as larger markers on the plot.
 
 ![Healthcare chart for 2023](/outputs/healthcare_chart_2023.png)
 
-For the relation between spendings in 2010-2014 and 5 years later, across the EU: EU countries that increased healthcare spending gained on average 0.84 years of life expectancy between 2015 and 2019 — nearly twice the gain of countries that cut spending. Croatia is noted as an outlier, having joined the EU in 2013.
+For the relation between spending in 2010–2014 and 5 years later, across the EU: EU countries that increased healthcare spending gained on average 0.84 years of life expectancy between 2015 and 2019 — nearly twice the gain of countries that cut spending. Croatia is noted as an outlier, having joined the EU in 2013.
 
 ![What changed within 5 years](/outputs/in_five_years.png)
 
-# Tools & libraries
+## How to run
+
+Requires Python 3.12+ and [uv](https://github.com/astral-sh/uv).
+
+```bash
+uv sync
+uv run jupyter notebook
+```
+
+Then open `healthcare_vs_life.ipynb` for chart 1, or `life_in_five_years.ipynb` for chart 2.
+
+## Tools & libraries
 
 Python, pandas, Plotly Express, requests, NumPy
 
-
-# Data
+## Data
 
 - Countries: EU-27 for the second plot; the world for the first chart
 - Period: 2010–2019 (2020 excluded due to COVID distortion)
